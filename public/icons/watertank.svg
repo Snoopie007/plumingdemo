@@ -1,0 +1,14 @@
+<!--
+  Export reference — canonical editable component: app/Constants/icons.tsx → WaterTankIcon
+  Uses CSS variables when inlined in HTML; prefer the React component for UI.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" fill="none">
+  <rect x="15" y="25" width="70" height="150" rx="15" fill="currentColor" />
+  <path d="M42 25L42 15C42 13 58 13 58 15L58 25Z" fill="currentColor" />
+  <rect x="28" y="175" width="10" height="12" rx="3" fill="currentColor" />
+  <rect x="62" y="175" width="10" height="12" rx="3" fill="currentColor" />
+  <line x1="17" y1="45" x2="83" y2="45" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" />
+  <path d="M50 78C50 78 33 103 33 113A17 17 0 0 0 67 113C67 103 50 78 50 78Z" fill="var(--primary)" />
+  <rect x="38" y="145" width="24" height="12" rx="6" fill="none" stroke="var(--primary)" stroke-width="2" />
+  <line x1="50" y1="145" x2="50" y2="157" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" />
+</svg>
