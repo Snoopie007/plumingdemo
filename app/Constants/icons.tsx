@@ -1,3 +1,49 @@
+/**
+ * Water heater tank icon (editable inline).
+ * White silhouette uses `currentColor`; blue accents use `var(--primary)` so they blend with `bg-primary` chips.
+ * Optional export copy: `public/icons/watertank.svg`
+ */
+function WaterTankIcon({ className }: { className?: string }) {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 200"
+            fill="none"
+            preserveAspectRatio="xMidYMid meet"
+            className={className}
+            aria-hidden
+        >
+            <rect x="15" y="25" width="70" height="150" rx="15" fill="currentColor" />
+            <path d="M42 25L42 15C42 13 58 13 58 15L58 25Z" fill="currentColor" />
+            <rect x="28" y="175" width="10" height="12" rx="3" fill="currentColor" />
+            <rect x="62" y="175" width="10" height="12" rx="3" fill="currentColor" />
+            <line
+                x1="17"
+                y1="45"
+                x2="83"
+                y2="45"
+                stroke="var(--primary)"
+                strokeWidth={2}
+                strokeLinecap="round"
+            />
+            <path
+                d="M50 78C50 78 33 103 33 113A17 17 0 0 0 67 113C67 103 50 78 50 78Z"
+                fill="var(--primary)"
+            />
+            <rect
+                x="38"
+                y="145"
+                width="24"
+                height="12"
+                rx="6"
+                fill="none"
+                stroke="var(--primary)"
+                strokeWidth={2}
+            />
+            <line x1="50" y1="145" x2="50" y2="157" stroke="var(--primary)" strokeWidth={2} strokeLinecap="round" />
+        </svg>
+    );
+}
 
 function TankIcon() {
     return (
@@ -63,25 +109,6 @@ function PressureIcon() {
     );
 }
 
-function OtherIcon() {
-    return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="size-7 shrink-0">
-            <circle cx="12" cy="12" r="9" />
-            <line x1="8" y1="12" x2="16" y2="12" />
-            <line x1="12" y1="8" x2="12" y2="16" />
-        </svg>
-    );
-}
-
-function ClockIcon({ className }: { className?: string }) {
-    return (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={className}>
-            <circle cx="12" cy="12" r="9" />
-            <path d="M12 7v5l3 2" />
-        </svg>
-    );
-}
-
 function ChevronRightIcon({ className }: { className?: string }) {
     return (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -99,7 +126,13 @@ function CheckCircleIcon({ className }: { className?: string }) {
     );
 }
 export {
-
-    TankIcon, TanklessIcon, CalendarIcon, FlameIcon, DropIcon,
-    PressureIcon, OtherIcon, ClockIcon, ChevronRightIcon, CheckCircleIcon
+    WaterTankIcon,
+    TankIcon,
+    TanklessIcon,
+    CalendarIcon,
+    FlameIcon,
+    DropIcon,
+    PressureIcon,
+    ChevronRightIcon,
+    CheckCircleIcon,
 };
