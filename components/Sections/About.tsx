@@ -1,29 +1,27 @@
 import Image from "next/image";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Fire02Icon } from "@hugeicons/core-free-icons";
-
-/** Swap this for any icon from `@hugeicons/core-free-icons`, or replace the list markup with `<img src="/icons/your-bullet.svg" />`. */
+import { CheckmarkCircle02Icon } from "@hugeicons/core-free-icons";
 
 export function AboutUsSection() {
     const DummyData = {
         bgImage: "/images/hero-bg.webp",
-        headline: "Best Martial Art School in Round Rock to Build Discipline and Leadership",
+        headline: "Austin's Trusted Plumbing Team — Fast, Honest, and Done Right",
         description: [
-            "Whether you’re focused on fitness, self-improvement, or self-defense, Seven Star Martial Arts in Round Rock is your destination. At Seven Star we believe martial arts is not just for fitness but rather a skill that can unite the Round Rock community.",
-            "Join our martial arts school and you will quickly gain essential self-defense skills, followed by invigorating workouts and personal growth. Join our Round Rock martial arts school now for a transformative journey. Experience the power of martial arts within our inclusive and vibrant community.",
+            "ClearFlow Plumbing has served homeowners across the Austin area for over a decade. From water heater replacements and leak repairs to full re-pipes and drain clearing, our licensed technicians handle it all with upfront pricing and no surprises.",
+            "We show up on time, explain the work before we start, and clean up when we're done. Whether it's an emergency or a planned upgrade, you can count on us to treat your home like our own.",
         ],
         bullets: [
             {
-                title: "High Quality Values",
-                body: "Through our martial arts program we help students acquire greater self-esteem, self-control, respect and humility.",
+                title: "Licensed & Insured",
+                body: "Every technician is fully licensed, background-checked, and insured so you can let us in with confidence.",
             },
             {
-                title: "Personal Development",
-                body: "You will be taught and encouraged by our professional trainers while moving at your own pace.",
+                title: "Upfront Flat-Rate Pricing",
+                body: "You'll know the exact cost before we touch a single pipe — no hourly surprises, no hidden fees.",
             },
             {
-                title: "Accessible & Enjoyable",
-                body: "We offer programs accessible & enjoyable by people of any ages.",
+                title: "Same-Day & Emergency Service",
+                body: "We're available 24/7 for urgent jobs and offer same-day appointments for most standard service calls.",
             },
         ] as const,
     };
@@ -34,7 +32,7 @@ export function AboutUsSection() {
                 <div className="relative h-full min-h-64 w-full overflow-hidden rounded-lg md:min-h-0">
                     <Image
                         src={DummyData.bgImage}
-                        alt={''}
+                        alt=""
                         fill
                         priority
                         sizes="(min-width: 768px) 50vw, 100vw"
@@ -46,7 +44,7 @@ export function AboutUsSection() {
                         <h1 className="font-sans text-5xl font-black uppercase text-black">
                             {DummyData.headline}
                         </h1>
-                        <div className="space-y-4 font-roboto text-lg ">
+                        <div className="space-y-4 font-roboto text-lg">
                             {DummyData.description.map((para, idx) => (
                                 <p key={idx}>{para}</p>
                             ))}
@@ -54,21 +52,16 @@ export function AboutUsSection() {
                         {DummyData.bullets.length > 0 ? (
                             <ul className="mt-6 list-none space-y-4 p-0">
                                 {DummyData.bullets.map((item) => (
-                                    <li key={item.title}
-                                        className="flex gap-3  text-lg text-black"
-                                    >
+                                    <li key={item.title} className="flex gap-3 text-lg text-black">
                                         <HugeiconsIcon
-                                            icon={Fire02Icon}
+                                            icon={CheckmarkCircle02Icon}
                                             strokeWidth={2}
-                                            className="mt-0.5 size-6 shrink-0 text-orange-600"
+                                            className="mt-0.5 size-6 shrink-0 text-primary"
                                             aria-hidden
                                         />
-                                        <p className="min-w-0 leading-relaxed  text-black">
-                                            <span className="font-bold">
-                                                {item.title}
-                                            </span>
-                                            <span className="">{" "} - {item.body}
-                                            </span>
+                                        <p className="min-w-0 leading-relaxed text-black">
+                                            <span className="font-bold">{item.title}</span>
+                                            <span>{" "} — {item.body}</span>
                                         </p>
                                     </li>
                                 ))}
