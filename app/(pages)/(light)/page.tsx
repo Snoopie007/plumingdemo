@@ -3,6 +3,7 @@ import {
     TestimonialsSection,
     FAQsSection,
 } from "@/components/sections";
+
 export default function LightHomePage() {
     return (
         <>
