@@ -23,7 +23,7 @@ export type QuizStep = {
   skipIf?: (answers: Record<string, string>) => boolean;
 };
 
-export type Screen = "quiz" | "estimate" | "contact";
+export type Screen = "quiz" | "estimate" | "contact" | "success";
 
 export interface QuizProgressProps {
   /** 0-based index of the current step within the active (non-skipped) steps */

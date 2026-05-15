@@ -72,3 +72,6 @@ export const STEPS: QuizStep[] = [
         ],
     },
 ];
+
+/** Shown on the quote confirmation screen and “Call Now” actions */
+export const COMPANY_PHONE = "512-123-4567";

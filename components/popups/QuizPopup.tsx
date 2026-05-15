@@ -10,9 +10,10 @@ import Image from "next/image";
 import QuizEstimate from "./QuizEstimate";
 import QuizProgress from "./QuizProgress";
 import QuizQuote from "./QuizQuote";
+import QuizSuccess from "./QuizSuccess";
 import QuizTrigger from "./QuizTrigger";
 import QuizOption from "./QuizOption";
-import { STEPS } from "@/app/Constants/constants";
+import { COMPANY_PHONE, STEPS } from "@/app/Constants/constants";
 import type { Screen, QuizStep } from "@/types/quiz";
 
 // ── helpers ──────────────────────────────────────────────────────────────────
@@ -44,6 +45,23 @@ function getEstimate(answers: Record<string, string>) {
   return { lo: "$1,200", hi: "$2,800" };
 }
 
+function stripLeadingDollar(value: string) {
+  return value.replace(/^\$\s*/, "").trim();
+}
+
+function firstNameFromFull(fullName: string) {
+  const t = fullName.trim();
+  if (!t) return "there";
+  return t.split(/\s+/)[0] ?? t;
+}
+
+function buildTelHref(displayPhone: string): string {
+  const digits = displayPhone.replace(/\D/g, "");
+  if (digits.length === 10) return `tel:+1${digits}`;
+  if (digits.length === 11 && digits.startsWith("1")) return `tel:+${digits}`;
+  return digits ? `tel:+${digits}` : "tel:";
+}
+
 // ── component ─────────────────────────────────────────────────────────────────
 
 export function QuizPopup() {
@@ -51,6 +69,7 @@ export function QuizPopup() {
   const [currentStep, setCurrentStep] = React.useState(STEPS[0]);
   const [answers, setAnswers] = React.useState<Record<string, string>>({});
   const [screen, setScreen] = React.useState<Screen>("quiz");
+  const [quoteSubmitterName, setQuoteSubmitterName] = React.useState<string | null>(null);
 
   const activeSteps = getActiveSteps(STEPS, answers);
   const activeIndex = activeSteps.findIndex((s) => s.id === currentStep.id);
@@ -71,6 +90,7 @@ export function QuizPopup() {
     setCurrentStep(STEPS[0]);
     setAnswers({});
     setScreen("quiz");
+    setQuoteSubmitterName(null);
   }
 
   function handleOpenChange(next: boolean) {
@@ -147,7 +167,22 @@ export function QuizPopup() {
           )}
 
           {screen === "contact" && (
-            <QuizQuote />
+            <QuizQuote
+              onSubmitSuccess={(data) => {
+                setQuoteSubmitterName(data.name);
+                setScreen("success");
+              }}
+            />
+          )}
+
+          {screen === "success" && quoteSubmitterName != null && (
+            <QuizSuccess
+              firstName={firstNameFromFull(quoteSubmitterName)}
+              estimateLow={stripLeadingDollar(estimate.lo)}
+              estimateHigh={stripLeadingDollar(estimate.hi)}
+              companyPhone={COMPANY_PHONE}
+              telHref={buildTelHref(COMPANY_PHONE)}
+            />
           )}
         </DialogContent>
       </Dialog>
