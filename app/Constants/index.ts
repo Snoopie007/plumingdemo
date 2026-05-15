@@ -1,2 +1,2 @@
 export * from "./Navigation";
-export * from "./PageContent";
+export * from "./icons";

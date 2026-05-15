@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Location } from "@/types";
+import type { Location } from "@/types/location";
 import Image from "next/image";
 
 interface FooterProps {
@@ -10,10 +10,13 @@ interface FooterProps {
 
 const topNav = {
 
-    programs: [
-        { href: "/about", label: "Lil Dragon" },
-        { href: "/team", label: "Kiddie Dragon" },
-        { href: "/careers", label: "Dragon Tales" },
+    services: [
+        { href: "/plumbing", label: "Plumbing" },
+        { href: "/drain-cleaning", label: "Drain Cleaning" },
+        { href: "/sewer-repair", label: "Sewer Repair" },
+        { href: "/sewer-replacement", label: "Sewer Replacement" },
+        { href: "/sewer-cleaning", label: "Sewer Cleaning" },
+        { href: "/sewer-inspection", label: "Sewer Inspection" },
     ],
     resources: [
         { href: "/privacy", label: "Privacy Policy" },
@@ -28,12 +31,16 @@ export function Footer({ location }: FooterProps) {
 
     return (
         <footer className="bg-background">
-            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
 
                     <div className="space-y-4">
-                        <Image src="/images/logo-ph.png" alt={location.name}
-                            width={250} height={250}
+                        <Image
+                            src="/images/logo-ph.svg"
+                            alt={location.name}
+                            width={250}
+                            height={250}
+                            loading="lazy"
                             className="w-auto object-contain object-left"
                         />
                     </div>
@@ -59,9 +66,9 @@ export function Footer({ location }: FooterProps) {
 
 
                     <nav aria-label="Company" className="space-y-4">
-                        <p className=" font-semibold text-foreground">Our Programs</p>
+                        <p className=" font-semibold text-foreground">Our Services</p>
                         <ul className="space-y-2">
-                            {topNav.programs.map(({ href, label }) => (
+                            {topNav.services.map(({ href, label }) => (
                                 <li key={href}>
                                     <Link href={href} prefetch={false} className="text-muted-foreground transition-colors hover:text-foreground">
                                         {label}

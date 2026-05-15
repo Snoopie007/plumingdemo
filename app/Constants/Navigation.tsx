@@ -5,18 +5,21 @@ export type NavigationItem = {
     submenu?: NavigationItem[];
 }
 export const MainNavigation = [
-    { id: "home", href: "/", label: "Home" },
-    { id: "pricing", href: "/pricing", label: "Pricing" },
+
     {
-        id: "programs",
+        id: "services",
         href: "#",
-        label: "Programs",
+        label: "Services",
         submenu: [
-            { id: "lil-dragon", href: "/programs/lil-dragon", label: "Lil Dragon" },
-            { id: "kiddie-dragon", href: "/programs/kiddie-dragon", label: "Kiddie Dragon" },
-            { id: "dragon-tales", href: "/programs/dragon-tales", label: "Dragon Tales" },
+            { id: "plumbing", href: "#", label: "Plumbing" },
+            { id: "drain-cleaning", href: "#", label: "Drain Cleaning" },
+            { id: "sewer-repair", href: "#", label: "Sewer Repair" },
+            { id: "sewer-replacement", href: "#", label: "Sewer Replacement" },
+            { id: "sewer-cleaning", href: "#", label: "Sewer Cleaning" },
+            { id: "sewer-inspection", href: "#", label: "Sewer Inspection" },
         ]
     },
-    { id: "quick-tour", href: "/quick-tour", label: "Quick Tour" },
-
+    { id: "about", href: "/about", label: "About" },
+    { id: "service-areas", href: "/service-areas", label: "Service Areas" },
+    { id: "reviews", href: "/reviews", label: "Reviews" },
 ] as const;

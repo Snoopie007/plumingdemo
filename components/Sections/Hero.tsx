@@ -1,22 +1,21 @@
 import Image from "next/image";
-import { Button, PrimaryCTAButton } from "../ui";
-import { cn } from "@/lib/utils";
+import { Button } from "../ui";
 
 
 export function HeroSection() {
     const DummyData = {
-        bgImage: "/images/hero-bg.webp",
-        headline: "Best Martial Art School in Round Rock to Build Discipline and Leadership",
-        description: "If you’re looking for the best Martial Arts School in Round Rock, then Look no further. Download our starter kit today to get access to our EXCLUSIVE offer! ",
+        bgImage: "/images/bg-pluming.jpg",
+        headline: "Plumging You Can Count Online",
+        description: "Fast, honest, and dependable water heater installation and repair services in Round Rock and Austin, TX.",
         buttons: [
             {
                 label: "Get Started",
-                href: "/get-started",
+                href: "#",
                 variant: "default" as const,
             },
             {
-                label: "Learn More",
-                href: "/learn-more",
+                label: "Schedule Online",
+                href: "#",
                 variant: "outline" as const,
             },
         ]
@@ -31,7 +30,7 @@ export function HeroSection() {
                 className="object-cover object-center"
             />
             {/* Optional scrim so text stays readable on busy photos */}
-            <div className="absolute inset-0 bg-black/35" aria-hidden />
+            <div className="absolute inset-0 bg-black/60" aria-hidden />
 
             <div className={`relative z-10 mx-auto flex min-h-[85vh]
              w-full max-w-4xl space-y-10 flex-col justify-center px-4 sm:px-6 lg:px-8`}>
@@ -45,10 +44,12 @@ export function HeroSection() {
 
                 </div>
                 <div className="flex flex-row gap-4 justify-center">
-                    <PrimaryCTAButton />
+                    <Button variant="default" size="lg" className="bg-primary border-2 border-primary cursor-pointer italic text-white h-12 hover:bg-primary/80">
+                        Call 469-242-4695
+                    </Button>
                     <Button variant="outline" size="lg"
-                        className="border-2 border-white text-white font-black uppercase text-lg h-15 px-10">
-                        Download Starter Kit
+                        className="border-2 border-white text-white font-black uppercase text-lg h-12 hover:bg-white hover:text-primary">
+                        Schedule Online
                     </Button>
                 </div>
             </div>

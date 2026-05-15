@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- Water heater tank body -->
+  <rect x="13" y="10" width="22" height="28" rx="5" fill="currentColor" opacity="0.15"/>
+  <rect x="13" y="10" width="22" height="28" rx="5" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Top pipe left -->
+  <line x1="18" y1="10" x2="18" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Top pipe right -->
+  <line x1="30" y1="10" x2="30" y2="5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Bottom drain pipe -->
+  <line x1="24" y1="38" x2="24" y2="43" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="20" y1="43" x2="28" y2="43" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Heating element circle -->
+  <circle cx="24" cy="22" r="5" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.12"/>
+  <circle cx="24" cy="22" r="2" fill="currentColor"/>
+
+  <!-- Pressure dial at top of tank -->
+  <rect x="20" y="14" width="8" height="3" rx="1.5" fill="currentColor" opacity="0.5"/>
+
+  <!-- Water drop accent (small, top-left of tank) -->
+  <path d="M8 22 C8 19 11 14 11 14 C11 14 14 19 14 22 C14 24.2 12.7 26 11 26 C9.3 26 8 24.2 8 22Z" fill="currentColor" opacity="0.7"/>
+</svg>

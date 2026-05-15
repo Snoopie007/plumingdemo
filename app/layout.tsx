@@ -3,10 +3,8 @@ import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner"
-import { Header, Footer } from "@/components/Shared";
-import { location } from "./Constants/";
 import { TooltipProvider } from "@/components/ui"
-
+import { QuizPopup } from "@/components/popups"
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -23,9 +21,12 @@ const roboto = Roboto({
 
 
 export const metadata: Metadata = {
-	title: "MWebTemp",
-	description: "A template for building web applications",
+	title: "Monstro X Website",
+	description: "A website for Monstro X",
 };
+
+
+
 
 export default function RootLayout({
 	children,
@@ -39,12 +40,13 @@ export default function RootLayout({
 		>
 			<TooltipProvider>
 				<body className="min-h-full flex flex-col">
-					<Header />
-					<main className="flex-1">{children}</main>
-					<Footer location={location} />
+
+					{children}
 					<Toaster />
+					<QuizPopup />
+
 				</body>
 			</TooltipProvider>
-		</html>
+		</html >
 	);
 }

@@ -15,52 +15,52 @@ type FAQ = {
 
 const FAQS: FAQ[] = [
     {
-        id: "age",
-        question: "What ages do you accept?",
+        id: "emergency",
+        question: "Do you offer emergency plumbing services?",
         answer:
-            "We offer programs for children, teens, and adults. Specific age ranges vary by class—contact us or book a tour and we’ll recommend the best fit.",
-    },
-    {
-        id: "trial",
-        question: "Do you offer a trial class?",
-        answer:
-            "Yes. Many families start with an assessment or trial class so you can meet the instructors and see how classes are structured before enrolling.",
-    },
-    {
-        id: "schedule",
-        question: "How often are classes held?",
-        answer:
-            "Schedules depend on the program. We typically offer multiple days and times per week; you’ll get a clear schedule when you enroll or during your visit.",
-    },
-    {
-        id: "uniform",
-        question: "What should I wear to my first class?",
-        answer:
-            "Comfortable athletic clothing is fine for a trial. If you join, we’ll go over uniform or dress expectations for your specific program.",
-    },
-    {
-        id: "experience",
-        question: "Do I need prior martial arts experience?",
-        answer:
-            "No. Our curriculum is designed for beginners through advanced students. Instructors meet you where you are and help you progress safely.",
+            "Yes. We're available 24/7 for burst pipes, major leaks, sewer backups, and other emergencies. Call us any time and we'll dispatch a technician as quickly as possible.",
     },
     {
         id: "pricing",
-        question: "How does pricing work?",
+        question: "How does your pricing work?",
         answer:
-            "Pricing varies by program and membership options. We’re happy to walk through plans, discounts, and family options in person or over the phone.",
+            "We provide upfront, flat-rate pricing before any work begins — no surprises on your final bill. Use our online estimate tool to get a ballpark range in under a minute.",
     },
     {
-        id: "safety",
-        question: "How do you keep classes safe?",
+        id: "water-heater",
+        question: "How do I know if I need to repair or replace my water heater?",
         answer:
-            "Safety is central to training: controlled drills, clear rules, appropriate pacing, and instructors who correct form and etiquette throughout class.",
+            "Units under 8–10 years old with a single issue are usually good candidates for repair. Older units, repeated problems, or rising energy bills typically point to replacement. We'll give you an honest recommendation on-site.",
     },
     {
-        id: "visit",
-        question: "Can I visit the school before signing up?",
+        id: "tankless",
+        question: "Is a tankless water heater worth it?",
         answer:
-            "Absolutely. Tours and introductory visits are welcome so you can see the space, ask questions, and get a feel for our community.",
+            "For most homes, yes. Tankless units provide unlimited hot water on demand and can reduce water heating costs by 20–30%. We'll walk you through the payback period based on your household size and usage.",
+    },
+    {
+        id: "arrival",
+        question: "How soon can a plumber arrive?",
+        answer:
+            "For non-emergency appointments we typically offer same-day or next-day availability. Emergency calls are prioritized and we'll give you an honest ETA when you call.",
+    },
+    {
+        id: "permit",
+        question: "Do you pull permits for installations?",
+        answer:
+            "Yes. All work that requires a permit — including water heater replacements and re-pipes — is properly permitted and inspected. This protects your home and keeps your insurance valid.",
+    },
+    {
+        id: "guarantee",
+        question: "Do you guarantee your work?",
+        answer:
+            "All labor comes with a workmanship guarantee. Parts and equipment also carry manufacturer warranties. If something isn't right after we leave, we'll come back and make it right.",
+    },
+    {
+        id: "prepare",
+        question: "What should I do before the plumber arrives?",
+        answer:
+            "Clear a path to the affected area and know where your main water shut-off valve is located. For water heater appointments, make sure the area around the unit is accessible.",
     },
 ];
 
@@ -106,8 +106,8 @@ export function FAQsSection() {
                     Got questions? We've got answers.
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground ">
-                    Quick answers about classes, trials, and getting started. Reach out if
-                    you don&apos;t see what you need.
+                    Common questions about our plumbing services, pricing, and what to expect.
+                    Reach out if you don&apos;t see what you need.
                 </p>
                 <div className="mt-10 grid gap-4 md:grid-cols-2 md:gap-6">
                     <FaqColumn items={left} />

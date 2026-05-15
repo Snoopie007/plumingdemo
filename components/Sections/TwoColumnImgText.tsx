@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { PrimaryCTAButton } from "../ui/PrimaryCTAButton";
 interface TwoColumnImgTextProps {
     image: string;
     headline: string;
@@ -36,7 +35,7 @@ export function TwoColumnImgText(props: TwoColumnImgTextProps) {
 
                     </div>
                     <div className="mt-4">
-                        <PrimaryCTAButton />
+
                     </div>
                 </div>
             </div>

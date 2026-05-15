@@ -13,27 +13,28 @@ import {
     NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import { PrimaryCTAButton } from "@/components/ui";
 import { MainNavigation } from "@/app/Constants/";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { Button } from "../ui";
 
 export function Header() {
     const isMobile = useIsMobile();
 
-
     return (
         <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent">
-            <div className="mx-auto flex w-full items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
+            <div className="mx-auto flex w-full items-center justify-between gap-6 p-2">
                 <div className="">
                     <Image
-                        src="/images/logo-ph.png"
+                        src="/images/logo-ph.svg"
                         alt="Logo"
-                        width={120}
-                        height={80}
+                        width={160}
+                        height={50}
                         priority
-
+                        loading="eager"
                         className="h-[50px] w-auto max-h-[50px] object-contain object-left"
+                        style={{ width: "auto", height: "50px" }}
+                        unoptimized
                     />
                 </div>
                 <div className="flex items-center gap-4">
@@ -97,7 +98,11 @@ export function Header() {
                                     })}
                                 </NavigationMenuList>
                             </NavigationMenu>
-                            <PrimaryCTAButton size="sm" />
+                            <Button variant="default" size="lg"
+                                className="bg-primary border-2 border-primary cursor-pointer italic text-white h-12 hover:bg-primary/80"
+                            >
+                                Get a Quote
+                            </Button>
                         </div>
                     )}
                 </div>
@@ -144,16 +149,14 @@ function MobileMenu() {
 
     return (
         <>
-            <button
-                type="button"
-                className="inline-flex size-11 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
-                aria-expanded={open}
-                aria-controls="mobile-navigation"
-                aria-label="Open menu"
+            <Button
+                variant="ghost"
+                size="icon"
+                className="size-11"
                 onClick={() => setOpen(true)}
             >
-                <HugeiconsIcon icon={Menu01Icon} strokeWidth={2} className="size-6" aria-hidden />
-            </button>
+                <HugeiconsIcon icon={Menu01Icon} strokeWidth={2} className="size-6 text-white" aria-hidden />
+            </Button>
             {open ? (
                 <div
                     id="mobile-navigation"
@@ -163,14 +166,15 @@ function MobileMenu() {
                     aria-label="Site navigation"
                 >
                     <div className="flex items-center justify-end px-4 py-4 sm:px-6">
-                        <button
-                            type="button"
-                            className="inline-flex size-11 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            className="size-11"
                             aria-label="Close menu"
                             onClick={() => setOpen(false)}
                         >
                             <HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} className="size-6" aria-hidden />
-                        </button>
+                        </Button>
                     </div>
                     <nav className="flex flex-1 flex-col items-center justify-center gap-6 px-6 pb-24">
                         {mobileNavLinks().map(({ key, href, label }) => (

@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
-import { addDays, isBefore, startOfDay, startOfWeek } from "date-fns";
+import { addDays, startOfDay, startOfWeek } from "date-fns";
 import { twMerge } from "tailwind-merge"
+import type { PaymentType } from "@/types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -32,4 +33,40 @@ function toUserLocalTime(date: Date, userTimeZone: string) {
     return date;
   }
 }
-export { generateUsername, startOfToday, weekDaysFor, toUserLocalTime };
+
+
+const formatAmountForDisplay = (
+  amount: number,
+  currency: string,
+  withSymbol = true
+): string => {
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: withSymbol ? "currency" : "decimal",
+    currency,
+    minimumFractionDigits: 0,
+  });
+
+  return formatter.format(amount);
+};
+
+
+
+const STRIPE_FEE_PERCENT = 2.9
+const STRIPE_FEE_AMOUNT = 0.30
+const STRIPE_BANK_FEE = 0.8;
+
+function calculateGatewayFeeAmount(amount: number, paymentType: PaymentType, isRecurring?: boolean) {
+  if (amount <= 0) return 0;
+  if (paymentType === 'us_bank_account') {
+    return Math.ceil(amount * (STRIPE_BANK_FEE / 100));
+  }
+  const fees = Math.ceil(amount * (STRIPE_FEE_PERCENT / 100)) + (STRIPE_FEE_AMOUNT * 100);
+  const feeOnStripeFees = Math.ceil(fees * (STRIPE_FEE_PERCENT / 100));
+
+  return fees + feeOnStripeFees;
+}
+
+export {
+  generateUsername, startOfToday, weekDaysFor,
+  toUserLocalTime, formatAmountForDisplay, calculateGatewayFeeAmount
+};
