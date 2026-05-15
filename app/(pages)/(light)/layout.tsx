@@ -4,21 +4,24 @@ import {
     Header
 } from "@/components/shared";
 
+
+const location = {
+    name: "ClearFlow Plumbing",
+    address: {
+        line1: "123 Main St",
+        line2: "",
+        city: "Round Rock",
+        state: "TX",
+        zip: "78664",
+        country: "USA"
+    },
+    phone: "512-123-4567",
+    email: "info@clearflow.com",
+    website: "https://www.clearflow.com"
+}
+
 export default function LightLayout({ children }: { children: React.ReactNode }) {
-    const location = {
-        name: "Best Plumming & Heating",
-        address: {
-            line1: "123 Main St",
-            line2: "",
-            city: "Round Rock",
-            state: "TX",
-            zip: "78664",
-            country: "USA"
-        },
-        phone: "512-123-4567",
-        email: "info@clearflow.com",
-        website: "https://www.bestplumbingandheating.com"
-    }
+
     return (
         <>
             <Header />
