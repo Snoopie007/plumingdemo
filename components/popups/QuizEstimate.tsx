@@ -1,12 +1,12 @@
 'use client';
 
 import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
-import { FlashIcon, Clock01Icon, SecurityLockIcon } from "@hugeicons/core-free-icons";
+import { FlashIcon, Clock01Icon, SecurityLockIcon, CheckmarkCircle02Icon } from "@hugeicons/core-free-icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "../ui";
 
 const TRUST_BULLETS = [
-    { icon: Clock01Icon, text: "Upfront pricing insights" },
+    { icon: CheckmarkCircle02Icon, text: "Upfront pricing insights" },
     { icon: Clock01Icon, text: "Takes 60 seconds" },
     { icon: SecurityLockIcon, text: "100% No obligation" },
 ]
@@ -47,7 +47,7 @@ export default function QuizEstimate({ estimate, onContinue }: { estimate: { lo:
             </ul>
 
             <Button className="w-full" size="lg" onClick={onContinue}>
-                Get more precise quote
+                Get a More Precise Quote
 
             </Button>
         </div>

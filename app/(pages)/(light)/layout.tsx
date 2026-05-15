@@ -2,7 +2,7 @@
 import {
     Footer,
     Header
-} from "@/components/Shared";
+} from "@/components/shared";
 
 export default function LightLayout({ children }: { children: React.ReactNode }) {
     const location = {

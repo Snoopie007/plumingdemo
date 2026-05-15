@@ -5,7 +5,7 @@ import { Button } from "../ui";
 export function HeroSection() {
     const DummyData = {
         bgImage: "/images/bg-pluming.jpg",
-        headline: "Plumging You Can Count Online",
+        headline: "Plumbing You Can Count On",
         description: "Fast, honest, and dependable water heater installation and repair services in Round Rock and Austin, TX.",
         buttons: [
             {
