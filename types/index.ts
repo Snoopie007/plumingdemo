@@ -1,9 +1,3 @@
-export * from "./other";
-export * from "./products";
-export * from "./gateway";
+
 export * from "./location";
-export * from "./user";
-export * from "./products";
-export * from "./cart";
-export * from "./coupon";
 export * from "./quiz";
