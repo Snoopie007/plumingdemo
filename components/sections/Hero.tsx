@@ -45,11 +45,11 @@ export function HeroSection() {
                 </div>
                 <div className="flex flex-row gap-4 justify-center">
                     <Button variant="default" size="lg" className="bg-primary border-2 border-primary cursor-pointer italic text-white h-12 hover:bg-primary/80">
-                        Call 469-242-4695
+                        Call Now
                     </Button>
                     <Button variant="outline" size="lg"
                         className="border-2 border-white text-white font-black uppercase text-lg h-12 hover:bg-white hover:text-primary">
-                        Schedule Online
+                        Contact Us
                     </Button>
                 </div>
             </div>
